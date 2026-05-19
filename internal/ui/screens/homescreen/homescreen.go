@@ -3,10 +3,9 @@ package homescreen
 import (
 	"fmt"
 
-	"github.com/alex-305/ticktui/internal/components"
-	"github.com/alex-305/ticktui/internal/context"
-	"github.com/alex-305/ticktui/internal/screens"
-	types "github.com/alex-305/ticktui/pkg/tickticktypes"
+	"github.com/alex-305/tuido/internal/context"
+	types "github.com/alex-305/tuido/internal/types"
+	"github.com/alex-305/tuido/internal/ui/components"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -40,7 +39,7 @@ type HomeScreen struct {
 	err              error
 }
 
-func NewHomeScreen(ctx context.AppContext) screens.Screen {
+func NewHomeScreen(ctx context.AppContext) *HomeScreen {
 	return &HomeScreen{
 		ctx:              ctx,
 		tabs:             components.NewTabs("h", "l"),
@@ -62,7 +61,7 @@ func (h *HomeScreen) Init() tea.Cmd {
 		h.showLoadingCmd())
 }
 
-func (h *HomeScreen) Update(msg tea.Msg, width, height int) (screens.Screen, tea.Cmd) {
+func (h *HomeScreen) Update(msg tea.Msg, width, height int) (*HomeScreen, tea.Cmd) {
 	h, c, ok := h.handleMessages(msg, width, height)
 	if ok {
 		return h, c

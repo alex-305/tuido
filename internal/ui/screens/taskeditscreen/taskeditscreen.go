@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/alex-305/ticktui/internal/context"
-	"github.com/alex-305/ticktui/internal/screens"
-	types "github.com/alex-305/ticktui/pkg/tickticktypes"
-	"github.com/alex-305/ticktui/pkg/tickticktypes/task"
+	"github.com/alex-305/tuido/internal/context"
+	"github.com/alex-305/tuido/internal/ui/screens"
+	types "github.com/alex-305/tuido/internal/types"
+	"github.com/alex-305/tuido/internal/types/task"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/huh"
 )
@@ -114,8 +114,10 @@ func (tf *TaskEditScreen) Update(msg tea.Msg, width, height int) (screens.Screen
 				}
 				tf.task.DueDate = dueDate
 			}
-			task, err := tf.ctx.APIClient.CreateTask(tf.task)
-			return taskCreatedMsg{task: task, err: err}
+			// TODO: add task
+			// return taskCreatedMsg{task: task, err: err}
+
+			return taskCreatedMsg{task: nil, err: nil}
 		}
 	}
 

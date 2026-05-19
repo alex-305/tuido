@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	types "github.com/alex-305/ticktui/pkg/tickticktypes"
+	types "github.com/alex-305/tuido/internal/types"
 	"github.com/charmbracelet/bubbles/table"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"

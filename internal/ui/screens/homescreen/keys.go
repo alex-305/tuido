@@ -1,8 +1,8 @@
 package homescreen
 
 import (
-	"github.com/alex-305/ticktui/internal/screens"
-	"github.com/alex-305/ticktui/internal/screens/taskeditscreen"
+	"github.com/alex-305/tuido/internal/ui/screens"
+	"github.com/alex-305/tuido/internal/ui/screens/taskeditscreen"
 	"github.com/charmbracelet/bubbles/key"
 	tea "github.com/charmbracelet/bubbletea"
 )

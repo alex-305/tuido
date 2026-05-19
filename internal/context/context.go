@@ -1,11 +1,9 @@
 package context
 
 import (
-	"github.com/alex-305/ticktui/internal/config"
-	api "github.com/alex-305/ticktui/pkg/ticktickapi"
+	"github.com/alex-305/tuido/internal/config"
 )
 
 type AppContext struct {
-	APIClient *api.Client
-	Config    *config.Config
+	Config *config.Config
 }

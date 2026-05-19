@@ -1,7 +1,7 @@
 package homescreen
 
 import (
-	"github.com/alex-305/ticktui/internal/components"
+	"github.com/alex-305/tuido/internal/ui/components"
 	tea "github.com/charmbracelet/bubbletea"
 )
 

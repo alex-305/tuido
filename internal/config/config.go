@@ -16,7 +16,7 @@ type Config struct {
 	Keybindings         map[string][]string `pkl:"keybindings"`
 }
 
-var configPath = filepath.Join(xdg.ConfigHome, "ticktui", "config.pkl")
+var configPath = filepath.Join(xdg.ConfigHome, "tuido", "config.pkl")
 
 func InitConfig() error {
 	if err := os.MkdirAll(filepath.Dir(configPath), 0755); err != nil {

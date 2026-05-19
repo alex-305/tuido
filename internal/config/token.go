@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-var tokenPath = filepath.Join(xdg.DataHome, "ticktui", "token")
+var tokenPath = filepath.Join(xdg.DataHome, "tuido", "token")
 
 func LoadToken() (string, error) {
 	data, err := os.ReadFile(tokenPath)

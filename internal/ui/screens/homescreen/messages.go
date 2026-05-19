@@ -1,9 +1,9 @@
 package homescreen
 
 import (
-	"github.com/alex-305/ticktui/internal/components"
-	"github.com/alex-305/ticktui/internal/screens"
-	types "github.com/alex-305/ticktui/pkg/tickticktypes"
+	"github.com/alex-305/tuido/internal/ui/components"
+	"github.com/alex-305/tuido/internal/ui/screens"
+	types "github.com/alex-305/tuido/internal/types"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 )

@@ -1,7 +1,6 @@
-package app
+package screens
 
 import (
-	"github.com/alex-305/ticktui/internal/screens"
 	tea "github.com/charmbracelet/bubbletea"
 )
 
@@ -11,15 +10,15 @@ type TokenExchangedMsg struct {
 
 func (m *Model) handleMessages(msg tea.Msg) (*Model, tea.Cmd, bool) {
 	switch msg := msg.(type) {
-	case screens.ChangeScreenMsg:
+	case ChangeScreenMsg:
 		m.history = append(m.history, m.current)
 		m.current = msg.NewScreen
 		return m, m.current.Init(), true
-	case screens.ChangeScreenMsgNoHistory:
-		m.history = []screens.Screen{}
+	case ChangeScreenMsgNoHistory:
+		m.history = []Screen{}
 		m.current = msg.NewScreen
 		return m, m.current.Init(), true
-	case screens.GoBackScreenMsg:
+	case GoBackScreenMsg:
 		if len(m.history) > 0 {
 			lastIndex := len(m.history) - 1
 			lastPage := m.history[lastIndex]

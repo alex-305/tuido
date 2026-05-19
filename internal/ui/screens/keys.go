@@ -1,4 +1,4 @@
-package app
+package screens
 
 import (
 	"github.com/charmbracelet/bubbles/key"
