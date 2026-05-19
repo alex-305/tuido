@@ -8,6 +8,16 @@ type TokenExchangedMsg struct {
 	err error
 }
 
+type ChangeScreenMsg struct {
+	NewScreen Screen
+}
+
+type ChangeScreenMsgNoHistory struct {
+	NewScreen Screen
+}
+
+type GoBackScreenMsg struct{}
+
 func (m *Model) handleMessages(msg tea.Msg) (*Model, tea.Cmd, bool) {
 	switch msg := msg.(type) {
 	case ChangeScreenMsg:

@@ -1,11 +1,7 @@
 package screens
 
 import (
-	"fmt"
-	"os"
-
 	"github.com/alex-305/tuido/internal/context"
-	"github.com/alex-305/tuido/internal/ui/screens/homescreen"
 	tea "github.com/charmbracelet/bubbletea"
 )
 
@@ -25,13 +21,9 @@ type Model struct {
 	ctx context.AppContext
 }
 
-func NewModel() *Model {
-
-	var initialScreen Screen
+func NewModel(initialScreen Screen) *Model {
 
 	ctx := context.AppContext{}
-
-	initialScreen = homescreen.NewHomeScreen(ctx)
 
 	return &Model{
 		current: initialScreen,

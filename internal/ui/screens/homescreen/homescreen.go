@@ -6,6 +6,7 @@ import (
 	"github.com/alex-305/tuido/internal/context"
 	types "github.com/alex-305/tuido/internal/types"
 	"github.com/alex-305/tuido/internal/ui/components"
+	"github.com/alex-305/tuido/internal/ui/screens"
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -61,7 +62,7 @@ func (h *HomeScreen) Init() tea.Cmd {
 		h.showLoadingCmd())
 }
 
-func (h *HomeScreen) Update(msg tea.Msg, width, height int) (*HomeScreen, tea.Cmd) {
+func (h *HomeScreen) Update(msg tea.Msg, width, height int) (screens.Screen, tea.Cmd) {
 	h, c, ok := h.handleMessages(msg, width, height)
 	if ok {
 		return h, c

@@ -5,9 +5,9 @@ import (
 	"regexp"
 
 	"github.com/alex-305/tuido/internal/context"
-	"github.com/alex-305/tuido/internal/ui/screens"
 	types "github.com/alex-305/tuido/internal/types"
 	"github.com/alex-305/tuido/internal/types/task"
+	"github.com/alex-305/tuido/internal/ui/screens"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/huh"
 )
@@ -24,7 +24,7 @@ type TaskEditScreen struct {
 	task *types.Task
 }
 
-func NewTaskEditScreen(ctx context.AppContext, projectID string, taskToEdit *types.Task) screens.Screen {
+func NewTaskEditScreen(ctx context.AppContext, projectID string, taskToEdit *types.Task) *TaskEditScreen {
 
 	tf := &TaskEditScreen{
 		ctx:  ctx,
