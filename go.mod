@@ -1,4 +1,4 @@
-module github.com/alex-305/ticktui
+module github.com/alex-305/tuido
 
 go 1.25.1
 
@@ -9,11 +9,8 @@ require (
 	github.com/charmbracelet/bubbletea v1.3.10
 	github.com/charmbracelet/huh v1.0.0
 	github.com/charmbracelet/lipgloss v1.1.0
-	github.com/cli/browser v1.3.0
 	github.com/dustin/go-humanize v1.0.1
-	github.com/go-resty/resty/v2 v2.17.2
 	github.com/gookit/color v1.6.0
-	github.com/joho/godotenv v1.5.1
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.10.2
 )
@@ -45,7 +42,6 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	golang.org/x/net v0.43.0 // indirect
 	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
 )

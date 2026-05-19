@@ -1,32 +1,27 @@
 ```
-  _______ ______ ____ _  _ _______ _    _ _____
- |__   __|_   _/ ____| |/ /__   __| |  | |_   _|
-    | |    | || |    | ' /   | |  | |  | | | |  
-    | |    | || |    |  |    | |  | |  | | | |  
-    | |   _| || |____|   \   | |  | |__| |_| |_ 
-    |_|  |_____\_____|_|\_\  |_|   \____/|_____|
+ _______  _    _  _____  ______  ______  
+|__   __|| |  | ||_   _||  __  \/ __   \ 
+   | |   | |  | |  | |  | |  | || |  | |
+   | |   | |  | |  | |  | |  | || |  | |
+   | |   | |__| | _| |_ | |__| || |__| |
+   |_|    \____/ |_____||_____/  \____/
 ```
 ## Purpose
-This is ticktui, the tui that helps you stay on top of your tasks even when you're on the terminal. This project builds off of the idea, structs, & API bindings from [Tickli](https://github.com/Sho0pi/tickli).
-
-Note: TickTick is a cloud based to do list app. This tui uses the TickTick api for user authentication. This project is unaffiliated with TickTick.
+This is tuido, the tui that helps you stay on top of your tasks even when you're on the terminal. 
 
 ## Demo
 
 WIP
 
-## ✨ Features
+## Features
 
-- User authentication
-- Create Tasks
-- Delete Tasks
-- Mark tasks completed
+- None thus far
 
-## 🚀 Installation
+## Installation
 
 No releases yet but hopefully soon :D
 
-## 🪄 Usage
+## Usage
 
 TBD
 
@@ -35,6 +30,6 @@ TBD
 - No AI slop.
 - Keep PRs small and focused.
 
-## ⚖️ License
+## License
 
 TBD
