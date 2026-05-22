@@ -5,8 +5,7 @@ import (
 	"regexp"
 
 	"github.com/alex-305/tuido/internal/context"
-	types "github.com/alex-305/tuido/internal/types"
-	"github.com/alex-305/tuido/internal/types/task"
+	"github.com/alex-305/tuido/internal/types"
 	"github.com/alex-305/tuido/internal/ui/screens"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/huh"
@@ -48,7 +47,7 @@ func NewTaskEditScreen(ctx context.AppContext, projectID string, taskToEdit *typ
 
 			huh.NewText().
 				Title("Description").
-				Value(&tf.task.Desc).
+				Value(&tf.task.Description).
 				Placeholder("Add details...").
 				Lines(5),
 
@@ -60,17 +59,17 @@ func NewTaskEditScreen(ctx context.AppContext, projectID string, taskToEdit *typ
 					if s == "" {
 						return nil
 					}
-					_, err := types.StringToTickTickTime(s)
+					_, err := types.YYYYmmddToTuidoTime(s)
 					return err
 				}),
 
-			huh.NewSelect[task.Priority]().
+			huh.NewSelect[types.TaskPriority]().
 				Title("Priority").
 				Options(
-					huh.NewOption("None", task.PriorityNone),
-					huh.NewOption("Low", task.PriorityLow),
-					huh.NewOption("Medium", task.PriorityMedium),
-					huh.NewOption("High", task.PriorityHigh),
+					huh.NewOption("None", types.TaskPriorityNone),
+					huh.NewOption("Low", types.TaskPriorityLow),
+					huh.NewOption("Medium", types.TaskPriorityMedium),
+					huh.NewOption("High", types.TaskPriorityHigh),
 				).
 				Value(&tf.task.Priority),
 		),
@@ -108,7 +107,7 @@ func (tf *TaskEditScreen) Update(msg tea.Msg, width, height int) (screens.Screen
 		return tf, func() tea.Msg {
 
 			if tf.dueDateString != "" {
-				dueDate, err := types.StringToTickTickTime(tf.dueDateString)
+				dueDate, err := types.YYYYmmddToTuidoTime(tf.dueDateString)
 				if err != nil {
 					return taskCreatedMsg{task: nil, err: err}
 				}

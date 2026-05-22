@@ -34,7 +34,7 @@ func NewTaskTable(tasks []*types.Task, width, height int) TaskTable {
 
 		rows[i] = table.Row{
 			t.Title,
-			t.Desc,
+			t.Description,
 			dueDateStr,
 			renderPriority(int(t.Priority)),
 		}

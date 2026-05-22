@@ -1,41 +1,24 @@
-package tickticktypes
+package types
 
-import "github.com/alex-305/tuido/internal/types/project"
-
-// InboxProject the Inbox project representation (cause is not returned by the api)
 var InboxProject = Project{
-	ID:        "inbox",
-	Name:      "📥Inbox",
-	Color:     project.DefaultColor,
-	SortOrder: 0,
-	Closed:    false,
-	Kind:      project.KindTask,
-	ViewMode:  project.ViewModeList,
+	ID:          "main",
+	Name:        "main",
+	Description: "The default project in tuido",
+	Color:       DefaultColor,
+	SortOrder:   0,
 }
 
 var NullProject = Project{}
 
 type Project struct {
-	ID         string           `json:"id"`
-	Name       string           `json:"name"`
-	Color      project.Color    `json:"color"`
-	SortOrder  int64            `json:"sortOrder"`
-	Closed     bool             `json:"closed"`
-	GroupID    string           `json:"groupId"`
-	ViewMode   project.ViewMode `json:"viewMode"`
-	Permission string           `json:"permission"`
-	Kind       project.Kind     `json:"kind"`
+	ID          string `json:"id" db:"id"`
+	Name        string `json:"name" db:"name"`
+	Description string `json:"description" db:"description"`
+	Color       Color  `json:"color" db:"color"`
+	SortOrder   int64  `json:"sortOrder" db:"sort_order"`
 }
 
 type ProjectData struct {
-	Project Project  `json:"project"`
-	Tasks   []Task   `json:"tasks"`
-	Columns []Column `json:"columns"`
-}
-
-type Column struct {
-	ID        string `json:"id"`
-	ProjectID string `json:"projectId"`
-	Name      string `json:"name"`
-	SortOrder int64  `json:"sortOrder"`
+	Project Project `json:"project"`
+	Tasks   []Task  `json:"tasks"`
 }

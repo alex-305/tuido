@@ -12,16 +12,34 @@ func init() {
 
 func upInit(ctx context.Context, tx *sql.Tx) error {
 	query := `
+		CREATE TABLE projects (
+			id INTEGER PRIMARY KEY,
+			name TEXT NOT NULL,
+			description TEXT,
+			color TEXT NOT NULL,
+			sort_order INTEGER NOT NULL,
+			created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+			deleted_at DATETIME DEFAULT NULL,
+			updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+		);
+
 		CREATE TABLE tasks (
-          id TEXT PRIMARY KEY,
+          id INTEGER PRIMARY KEY,
+					project_id INTEGER REFERENCES projects(id),
           title TEXT NOT NULL,
+					is_all_day BOOLEAN NOT NULL,
+					due_date DATETIME DEFAULT NULL,
+					completed_time DATETIME DEFAULT NULL,
           description TEXT,
           status TEXT NOT NULL,
           priority INTEGER DEFAULT 0,
+					sort_order INTEGER NOT NULL,
           created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
           deleted_at DATETIME DEFAULT NULL,
           updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-        );	
+        );
+
+
 
 	CREATE TRIGGER update_tasks_timestamp 
 		BEFORE UPDATE ON tasks
